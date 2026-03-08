@@ -200,7 +200,7 @@ onUnmounted(() => document.removeEventListener('keydown', handleKeydown))
         :key="page.path"
         :to="page.path"
         class="group relative flex flex-col border border-border-default bg-bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-l-4 hover:border-l-accent-coral hover:bg-bg-elevated hover:shadow-lg hover:shadow-accent-coral/5 animate-fade-up"
-        :style="{ animationDelay: `${400 + index * 100}ms` }"
+        :style="{ animationDelay: `${Math.min(400 + index * 60, 1000)}ms` }"
       >
         <!-- Background number -->
         <span
