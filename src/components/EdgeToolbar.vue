@@ -83,7 +83,7 @@ function dismiss() {
   >
     <!-- Trigger tab (always flush to right edge) -->
     <button
-      class="flex-shrink-0 flex items-center justify-center w-6 h-14 rounded-l-lg transition-all duration-300 cursor-pointer"
+      class="flex-shrink-0 flex items-center justify-center w-6 h-14 transition-all duration-300 cursor-pointer"
       :class="
         isOpen ? 'bg-bg-elevated/90 backdrop-blur-sm' : 'bg-bg-elevated/60 hover:bg-bg-elevated/80'
       "
@@ -102,7 +102,7 @@ function dismiss() {
       :class="isOpen ? 'max-w-xs' : 'max-w-0'"
     >
       <div
-        class="flex flex-col gap-2 p-2 rounded-l-xl bg-bg-elevated/90 backdrop-blur-sm border border-r-0 border-border-default shadow-lg"
+        class="flex flex-col gap-2 p-2 bg-bg-elevated/90 backdrop-blur-sm border border-r-0 border-border-default shadow-lg"
       >
         <!-- View source code -->
         <a
@@ -113,7 +113,7 @@ function dismiss() {
           title="Xem mã nguồn"
         >
           <Icon icon="lucide:code-2" class="w-5 h-5" />
-          <span class="toolbar-label">Mã nguồn</span>
+          <span class="toolbar-label font-display tracking-wide">Mã nguồn</span>
         </a>
 
         <!-- Bookmark -->
@@ -124,13 +124,15 @@ function dismiss() {
           @click="handleFavorite"
         >
           <Icon icon="lucide:heart" class="w-5 h-5" :class="favorited && 'icon-filled'" />
-          <span class="toolbar-label">{{ favorited ? 'Đã thích' : 'Yêu thích' }}</span>
+          <span class="toolbar-label font-display tracking-wide">{{
+            favorited ? 'Đã thích' : 'Yêu thích'
+          }}</span>
         </button>
 
         <!-- Home -->
         <button class="toolbar-btn group" title="Về trang chủ" @click="goHome">
           <Icon icon="lucide:home" class="w-5 h-5" />
-          <span class="toolbar-label">Trang chủ</span>
+          <span class="toolbar-label font-display tracking-wide">Trang chủ</span>
         </button>
 
         <hr class="border-border-default" />
@@ -138,7 +140,7 @@ function dismiss() {
         <!-- Dismiss toolbar -->
         <button class="toolbar-btn group text-text-dim" title="Tắt toolbar" @click="dismiss">
           <Icon icon="lucide:x" class="w-5 h-5" />
-          <span class="toolbar-label">Tắt</span>
+          <span class="toolbar-label font-display tracking-wide">Tắt</span>
         </button>
       </div>
     </div>
@@ -151,7 +153,6 @@ function dismiss() {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
-  border-radius: 0.5rem;
   color: var(--color-text-secondary);
   transition: all 0.2s;
   cursor: pointer;
